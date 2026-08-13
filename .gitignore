@@ -1,0 +1,17 @@
+/*
+!common
+!common/**
+!models
+!models/**
+!eval_ast.py
+!eval_panns.py
+!inference_ast.py
+!inference_panns.py
+!inference_ensemble.py
+!.gitignore
+# re-exclude junk that would otherwise slip in through the whitelist above
+**/__pycache__/
+**/*.pyc
+**/.DS_Store
+!sample_data
+!sample_data/**
