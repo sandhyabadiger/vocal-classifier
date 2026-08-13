@@ -2,7 +2,12 @@
 Classifies speech vs non-speech vocal sounds (laughing, coughing,
 crying, breathing, etc). VAD
 plus two pretrained sound-tagging models, AST and PANNs
+AST (Audio Spectrogram Transformer): a transformer-based model from MIT.
+PANNs (Pretrained Audio Neural Networks): an older, simpler CNN model (CNN14)
 
+Both are generalised sound classifiers trained on AudioSet. Neither was built mainly for for "speech vs non-speech," just tells what kind of sound a given clip is as it has hundreds of categories!
+
+The actual speech/non-speech(vocal) decision comes from Silero VAD plus a check of whether AST or PANNs confidently labeled the clip as a human sound like laughing, crying, coughing or breathing. If so, we call it non-speech. If not, we fall back to what VAD says!
 ## Setup
 ```
 pip install -r requirements.txt
